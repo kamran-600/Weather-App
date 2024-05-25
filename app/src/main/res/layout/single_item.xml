@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginVertical="20dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="30dp" >
+
+
+        <TextView
+            android:id="@+id/tv_item_status"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="overcast clouds"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black" />
+
+
+        <TextView
+            android:id="@+id/tv_item_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Temperature"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tv_item_status"
+            android:textSize="18sp" />
+
+
+        <ImageView
+            android:id="@+id/img_item"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tv_item_temp"
+            app:srcCompat="@drawable/humidity" />
+
+
+        <TextView
+            android:id="@+id/tv_Item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="forecast time"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/img_item"
+            android:textColor="@color/black"/>
+
+
+
+
+    </RelativeLayout>
+
+
+
+</com.google.android.material.card.MaterialCardView>

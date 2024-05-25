@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    tools:context=".PollutionFragment">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/backButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:src="@drawable/arrow_back"
+        android:paddingStart="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="25dp"/>
+
+
+
+
+    <TextView
+        android:id="@+id/pollutants"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:lineSpacingMultiplier="1.3"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="30dp"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

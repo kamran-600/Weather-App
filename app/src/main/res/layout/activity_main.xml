@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".MainActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/searchCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="70dp"
+            app:cardCornerRadius="10dp">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#EDE3E3"
+                app:iconifiedByDefault="false"
+                app:queryHint="Search here..." />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/searchCard"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Location"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
+
+        <!--<TextView
+            android:id="@+id/AutoLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/searchCard"
+            android:drawableStart="@drawable/location"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Auto"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="20dp"
+            android:drawableTint="#CF2727"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+-->
+
+        <TextView
+            android:id="@+id/updatedAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/location"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="updated at"
+            android:textColor="@color/white" />
+
+
+        <TextView
+            android:id="@+id/weatherDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/updatedAt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="Clear Sky"
+            android:textColor="@color/white" />
+
+        <RelativeLayout
+            android:id="@+id/rl1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/weatherDesc"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:text="37\u2103"
+                android:textColor="@color/white"
+                android:textSize="50sp" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageWeather"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentEnd="true"
+                app:srcCompat="@drawable/sunset" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl1"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="10dp">
+
+
+            <TextView
+                android:id="@+id/minTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+                android:text="Min Temp"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/maxTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:text="Max Temp"
+                android:textColor="@color/white" />
+
+
+        </RelativeLayout>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mtlCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/tv_forecast"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="40dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="30dp">
+
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:columnCount="3"
+                android:padding="10dp"
+                android:rowCount="2">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="0">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/sunriseLottie"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/sunrise" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvSunrise"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sunriseLottie"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal"
+                        android:text="Sun Rise" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="1">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/sunsetLottie"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/sunset" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvSunset"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sunsetLottie"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal"
+                        android:text="Sun Set" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="2">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/windSpeedLottie"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/wind_speed" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvWindSpeed"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/windSpeedLottie"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal"
+                        android:text="Wind Speed" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="0">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/pressureLottie"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/pressure" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvPressure"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pressureLottie"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal"
+                        android:text="Pressure" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="1">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/humidityLottie"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/humidity" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvHumidity"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/humidityLottie"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal"
+                        android:text="Humidity" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/pollutionGrid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="2">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/airQualityLottie"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/airquality" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvAirQuality"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/airQualityLottie"
+                        android:gravity="center_horizontal"
+                        android:text="Air Quality" />
+
+                </RelativeLayout>
+
+
+            </GridLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_forecast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"
+            android:drawableBottom="@drawable/arrow_down"
+            android:fontFamily="sans-serif-medium"
+            android:text="5 Days Forecast"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>
